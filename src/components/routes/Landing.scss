@@ -1,14 +1,23 @@
 #landing {
   .home {
-    display: flex;
-    justify-content: space-between;
+    height: 100vh;
 
-    .left {
-      width: 50%;
-    }
+    .content {
+      height: 80%;
+      display: flex;
+      justify-content: space-between;
 
-    .right {
-      width: 40%;
+      .left {
+        width: 40%;
+      }
+
+      .right {
+        width: 40%;
+
+        img {
+          width: 100%;
+        }
+      }
     }
   }
 }
