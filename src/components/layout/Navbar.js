@@ -20,6 +20,12 @@ export default function Navbar() {
           <li><a href="#contact">Contact</a></li>
           <li><Link to="/articles">Articles</Link></li>
         </ul>
+
+        <div id="menu-icon">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </nav>
     </div>
   )

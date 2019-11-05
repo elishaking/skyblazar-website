@@ -36,5 +36,27 @@
         margin-right: 0;
       }
     }
+
+    #menu-icon {
+      display: none;
+
+      div {
+        width: 20px;
+        height: 2px;
+        border-radius: 30px;
+        background-color: #B9721F;
+        margin-bottom: 4px;
+      }
+    }
+
+    @media (max-width: 1000px) {
+      ul {
+        display: none;
+      }
+
+      #menu-icon {
+        display: block;
+      }
+    }
   }
 }
