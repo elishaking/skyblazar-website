@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import './Landing.scss';
+
+//components
 import Navbar from '../layout/Navbar';
+
+// assets
 import art from '../../assets/images/art.svg';
 
 export default class Landing extends Component {
