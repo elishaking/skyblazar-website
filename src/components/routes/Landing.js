@@ -21,7 +21,7 @@ export default class Landing extends Component {
               </h1>
 
               <p>
-                We a dedicated to giving your brand by building a unique and compelling digital presence
+                We are dedicated to giving your brand by building a unique and compelling digital presence
               </p>
 
               <a href="#contact">Start a Project</a>
