@@ -57,5 +57,51 @@
         }
       }
     }
+
+    @media (max-width: 1470px) {
+      .content {
+        .left {
+          h1 {
+            font-size: 200%;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 1300px) {
+      .content {
+        .left {
+          width: 70%;
+
+          h1 {
+            font-size: 300%;
+          }
+        }
+
+        .right {
+          width: 70%;
+          position: absolute;
+          right: 5vw;
+          top: 20%;
+          opacity: 0.1;
+        }
+      }
+    }
+
+    @media (max-width: 950px) {
+      height: fit-content;
+
+      .content {
+        .left {
+          margin: 3em 0;
+          width: 100%;
+          max-width: 700px;
+        }
+
+        .right {
+          top: 10%
+        }
+      }
+    }
   }
 }
