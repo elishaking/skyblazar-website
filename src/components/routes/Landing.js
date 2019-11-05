@@ -6,7 +6,7 @@ import art from '../../assets/images/art.svg';
 export default class Landing extends Component {
   render() {
     return (
-      <div id="landing">
+      <div id="landing" className="container">
         <div className="home">
           <Navbar />
 
