@@ -99,9 +99,25 @@
         }
 
         .right {
-          top: 10%
+          top: 10%;
         }
       }
     }
+
+    @media (max-width: 760px) {
+      .content {
+        flex-direction: column;
+
+        .right {
+          position: static;
+          opacity: 1;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    font-size: 70%;
   }
 }
