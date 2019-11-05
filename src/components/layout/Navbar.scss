@@ -7,7 +7,7 @@
     h1 {
       display: flex;
       align-items: center;
-      color: #FE9D2B;
+      color: #B9721F;
 
       svg {
         margin-right: 1em;
@@ -23,7 +23,12 @@
 
         a {
           text-decoration: none;
+          color: #B9721F;
+          transition: 0.3s ease-in-out;
+        }
 
+        a:hover {
+          color: #FF8A00;
         }
       }
 

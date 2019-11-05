@@ -10,8 +10,8 @@ import art from '../../assets/images/art.svg';
 export default class Landing extends Component {
   render() {
     return (
-      <div id="landing" className="container">
-        <div className="home">
+      <div id="landing">
+        <div className="home container">
           <Navbar />
 
           <div className="content">
