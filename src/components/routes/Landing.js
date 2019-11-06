@@ -125,6 +125,18 @@ export default class Landing extends Component {
           </div>
         </div>
 
+        <div className="contact container">
+          <h2>YOUR PROJECT</h2>
+
+          <div className="categories">
+
+          </div>
+
+          <form method="POST">
+
+          </form>
+        </div>
+
         {
           showModal && (
             <ImageModal
