@@ -27,7 +27,7 @@ export default class Articles extends Component {
                 articles.map((article) => (
                   <div className="article">
                     <img src={article.source} alt={article.name} />
-                    <p><a href={`/articles/${article.name}`}>{article.name}</a></p>
+                    <p><a href={`/articles/${article.name.replace(/ /g, "-")}`}>{article.name}</a></p>
                   </div>
                 ))
               }
