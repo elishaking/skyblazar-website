@@ -229,7 +229,7 @@ export default class Landing extends Component {
         </div>
 
         <div className="contact container">
-          <h2>YOUR PROJECT</h2>
+          <h2>NEW PROJECT ENQUIRY</h2>
 
           <div className="categories">
 
