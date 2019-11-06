@@ -197,6 +197,15 @@
     h2 {
       color: #B9721F;
     }
+
+    .contact-form {
+      max-width: 700px;
+      padding: 2em;
+      margin: 2em auto;
+      border: 1px solid rgba($color: #B9721F, $alpha: .3);
+      border-radius: 5px;
+      // box-shadow: 0 0 10px rgba($color: #B9721F, $alpha: .1);
+    }
   }
 
   @media (max-width: 600px) {

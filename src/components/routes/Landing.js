@@ -13,6 +13,7 @@ import dizt from '../../assets/images/projects/Dizt.svg';
 import gracelites from '../../assets/images/projects/Gracelites.svg';
 import quotz from '../../assets/images/projects/Quotz.svg';
 import ImageModal from '../ImageModal';
+import TextInput from '../form/TextInput';
 
 const projects = [
   {
@@ -132,9 +133,40 @@ export default class Landing extends Component {
 
           </div>
 
-          <form method="POST">
+          <div className="contact-form">
+            <form method="POST">
+              <TextInput
+                type="text"
+                name="name"
+                placeholder="* Your name"
+                error="" />
 
-          </form>
+              <TextInput
+                type="email"
+                name="email"
+                placeholder="* Your email"
+                error="" />
+
+              <TextInput
+                type="tel"
+                name="phone"
+                placeholder="Your phone number"
+                error="" />
+
+              <TextInput
+                type="text"
+                name="title"
+                placeholder="Project Title"
+                error="" />
+
+              <TextInput
+                type="text"
+                name="title"
+                placeholder="Short Project Description"
+                error=""
+                marginBottom="0" />
+            </form>
+          </div>
         </div>
 
         {

@@ -1,0 +1,14 @@
+.text-input {
+  input {
+    width: 100%;
+    padding: 1em 2em;
+    border: 1px solid #B9721F;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s ease-in-out;
+  }
+
+  input:focus {
+    box-shadow: 0 0 10px rgba($color: #B9721F, $alpha: 0.3);
+  }
+}
