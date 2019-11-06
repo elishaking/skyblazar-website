@@ -25,12 +25,12 @@ export default function Navbar({ white = false }) {
         </h1>
 
         <ul>
-          <li><a onClick={scrollPage} href="/">Home</a></li>
+          <li><a style={{ color: white && '#fff' }} onClick={scrollPage} href="/">Home</a></li>
           {/* <li><a onClick={scrollPage} href="#about">About</a></li> */}
-          <li><a onClick={scrollPage} href="#services">Services</a></li>
-          <li><a onClick={scrollPage} href="#projects">Projects</a></li>
-          <li><a onClick={scrollPage} href="#contact">Contact</a></li>
-          <li><Link to="/articles">Articles</Link></li>
+          <li><a style={{ color: white && '#fff' }} onClick={scrollPage} href="#services">Services</a></li>
+          <li><a style={{ color: white && '#fff' }} onClick={scrollPage} href="#projects">Projects</a></li>
+          <li><a style={{ color: white && '#fff' }} onClick={scrollPage} href="#contact">Contact</a></li>
+          <li><Link style={{ color: white && '#fff' }} to="/articles">Articles</Link></li>
         </ul>
 
         <div id="menu-icon">
