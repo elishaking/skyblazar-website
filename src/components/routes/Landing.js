@@ -8,29 +8,32 @@ import Navbar from '../layout/Navbar';
 
 // assets
 import art from '../../assets/images/art.svg';
-import calcen from '../../assets/images/projects/CalcEn.svg'
+import calcen from '../../assets/images/projects/CalcEn.svg';
+import dizt from '../../assets/images/projects/Dizt.svg';
+import gracelites from '../../assets/images/projects/Gracelites.svg';
+import quotz from '../../assets/images/projects/Quotz.svg';
 import ImageModal from '../ImageModal';
 
 const projects = [
   {
     name: "CalcEn: Complex Calculator",
     source: calcen,
-    description: "CalcEn is a complex number calculator that handles arithmetic of complex expressions, matrices and functions"
+    description: "CalcEn is a complex number calculator for android that handles arithmetic of complex expressions, matrices and functions"
   },
   {
-    name: "CalcEn: Complex Calculator",
-    source: calcen,
-    description: "CalcEn is a complex number calculator that handles arithmetic of complex expressions, matrices and functions"
+    name: "Gracelites International School",
+    source: gracelites,
+    description: "Gracelites is an outstanding Nursery/Primary committed to laying the crucial foundations that will set your child on the right path to all-round excellence spiritually, intellectually and physically"
   },
   {
-    name: "CalcEn: Complex Calculator",
-    source: calcen,
-    description: "CalcEn is a complex number calculator that handles arithmetic of complex expressions, matrices and functions"
+    name: "Dizt: Navigation App",
+    source: dizt,
+    description: "Dizt is a simple and intuitive mobile app that enables you to determine the road distance between two locations and the exact travel time using your car, the bus, your bicycle or by walking. You also get to see the transport fare if you are using a bus along some routes"
   },
   {
-    name: "CalcEn: Complex Calculator",
-    source: calcen,
-    description: "CalcEn is a complex number calculator that handles arithmetic of complex expressions, matrices and functions"
+    name: "Quotz: Quotes App",
+    source: quotz,
+    description: "Quotz is an elegant mobile app that displays several mindfully selected quotes in a simple and elegant interface that can be used as a screensaver. It contains words of wisdom from several great men and woman who have had a great impact on the world"
   },
 ];
 
@@ -114,8 +117,8 @@ export default class Landing extends Component {
                   </a>
 
                   <a href="https://calcen.skyblazar.com" rel="noopener noreferrer" target="_blank">
-                    CalcEn: Complex Calculator
-              </a>
+                    {project.name}
+                  </a>
                 </div>
               ))
             }
