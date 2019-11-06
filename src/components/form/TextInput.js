@@ -6,7 +6,7 @@ export default function TextInput({ type, name, placeholder, onChange, error, ma
     <div className="text-input" style={{
       marginBottom: marginBottom
     }}>
-      <input
+      <input className={error ? "error" : ""}
         type={type}
         name={name}
         placeholder={placeholder}
