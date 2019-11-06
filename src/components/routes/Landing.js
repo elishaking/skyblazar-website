@@ -65,12 +65,10 @@ export default class Landing extends Component {
     loading: false
   };
 
-  /**@param {React.MouseEvent} e */
   closeModal = (e) => {
     this.setState({ showModal: false });
   };
 
-  // /** @param {React.MouseEvent} e */
   openModal = (e) => {
     const img = e.target.parentElement.getElementsByTagName('img')[0];
     this.setState({
