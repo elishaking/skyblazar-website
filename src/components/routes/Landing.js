@@ -149,7 +149,7 @@ export default class Landing extends Component {
 
     return (
       <div id="landing">
-        <div className="home container">
+        <div id="home" className="home container">
           <Navbar />
 
           <div className="content">
@@ -159,7 +159,7 @@ export default class Landing extends Component {
               </h1>
 
               <p>
-                We are dedicated to giving your brand by building a unique and compelling digital presence
+                We are dedicated to distinguishing your brand by building a unique and compelling digital presence
               </p>
 
               <a href="#contact">Start a Project</a>
@@ -171,7 +171,7 @@ export default class Landing extends Component {
           </div>
         </div>
 
-        <div className="services container">
+        <div id="services" className="services container">
           <h2>WHAT WE DO</h2>
 
           <GliderContainer slides={[
@@ -198,7 +198,7 @@ export default class Landing extends Component {
           ]} />
         </div>
 
-        <div className="projects container">
+        <div id="projects" className="projects container">
           <h2>RECENT PROJECTS</h2>
 
           <div className="content">
@@ -228,7 +228,7 @@ export default class Landing extends Component {
           </div>
         </div>
 
-        <div className="contact container">
+        <div id="contact" className="contact container">
           <h2>NEW PROJECT ENQUIRY</h2>
 
           <div className="categories">
