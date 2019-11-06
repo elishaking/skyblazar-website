@@ -174,16 +174,26 @@ export default class Landing extends Component {
         <div className="services container">
           <h2>WHAT WE DO</h2>
 
-          <GliderContainer images={[
+          <GliderContainer slides={[
             {
               src: website,
-              title: "Web",
-              description: "new"
+              title: "Web Development",
+              description: "Your Hello to the internet. Let us help you create a unique and compelling Web Interface to make your business available and appealing to a broad array of prospective clients"
             },
             {
-              src: website,
-              title: "Web",
-              description: "new"
+              src: mobile,
+              title: "Mobile App Development",
+              description: "We can translate your business process into a functional and appealing mobile application integrated with the cloud"
+            },
+            // {
+            //   src: desktop,
+            //   title: "Desktop App Development",
+            //   description: "Sometimes, mobile apps just won't do it and you need a more advanced and featureful application to meet your  user demands. We have been there and we can help you translate those big dreams to real apps with real impact"
+            // },
+            {
+              src: ux,
+              title: "UI/UX Designs",
+              description: "For every product we create, UX Design / Research is a fundamental step. The end result is an elegant and user friendly app/website"
             },
           ]} />
         </div>

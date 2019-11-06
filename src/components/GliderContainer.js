@@ -23,17 +23,17 @@ export default class GliderContainer extends Component {
   }
 
   render() {
-    const { images } = this.props;
+    const { slides } = this.props;
 
     return (
       <div className="glider-contain multiple gallery">
         <div className="glider">
           {
-            images.map((image) => (
+            slides.map((slide) => (
               <div className="img-slide">
-                <img src={image.src} alt="" />
-                <h3>{image.title}</h3>
-                <p>{image.description}</p>
+                <img src={slide.src} alt="" />
+                <h3>{slide.title}</h3>
+                <p>{slide.description}</p>
               </div>
             ))
           }
