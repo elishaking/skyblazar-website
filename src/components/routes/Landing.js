@@ -4,18 +4,25 @@ import axios from 'axios';
 import See from '../icons/See';
 import './Landing.scss';
 
-//components
-import Navbar from '../layout/Navbar';
-
 // assets
 import art from '../../assets/images/art.svg';
 import calcen from '../../assets/images/projects/CalcEn.svg';
 import dizt from '../../assets/images/projects/Dizt.svg';
 import gracelites from '../../assets/images/projects/Gracelites.svg';
 import quotz from '../../assets/images/projects/Quotz.svg';
+
+import website from '../../assets/images/services/website.svg';
+import desktop from '../../assets/images/services/desktop.svg';
+import mobile from '../../assets/images/services/mobile.svg';
+import ux from '../../assets/images/services/ux.svg';
+
+//components
+import Navbar from '../layout/Navbar';
 import ImageModal from '../ImageModal';
 import TextInput from '../form/TextInput';
 import Spinner from '../Spinner';
+import GliderContainer from '../GliderContainer';
+
 
 const projects = [
   {
@@ -167,7 +174,18 @@ export default class Landing extends Component {
         <div className="services container">
           <h2>WHAT WE DO</h2>
 
-
+          <GliderContainer images={[
+            {
+              src: website,
+              title: "Web",
+              description: "new"
+            },
+            {
+              src: website,
+              title: "Web",
+              description: "new"
+            },
+          ]} />
         </div>
 
         <div className="projects container">
