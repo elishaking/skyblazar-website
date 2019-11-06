@@ -1,5 +1,55 @@
 .articles {
   .main {
     background-image: url(../../assets/images/articles-bg.svg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: auto;
+
+    .content {
+      padding: 7em 0;
+
+      h1 {
+        color: white;
+        font-size: 300%;
+        text-align: center;
+      }
+
+      #articles {
+        padding: 7em 0;
+        display: flex;
+        flex-wrap: wrap;
+
+        .article {
+          text-align: center;
+
+          img {
+            margin-bottom: 1em;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba($color: #000000, $alpha: 0.3);
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+          }
+
+          img:hover {
+            transform: scale(1.03);
+          }
+
+          a {
+            text-decoration: none;
+            color: #B9721F;
+            transition: 0.3s ease-in-out;
+          }
+
+          a:hover {
+            color: #FF8A00;
+          }
+
+          // p {
+          //   text-align: center;
+          // }
+        }
+      }
+    }
   }
 }

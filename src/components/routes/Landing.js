@@ -12,7 +12,7 @@ import gracelites from '../../assets/images/projects/Gracelites.svg';
 import quotz from '../../assets/images/projects/Quotz.svg';
 
 import website from '../../assets/images/services/website.svg';
-import desktop from '../../assets/images/services/desktop.svg';
+// import desktop from '../../assets/images/services/desktop.svg';
 import mobile from '../../assets/images/services/mobile.svg';
 import ux from '../../assets/images/services/ux.svg';
 
