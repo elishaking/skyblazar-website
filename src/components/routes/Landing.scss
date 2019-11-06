@@ -64,16 +64,14 @@
     }
 
     @media (max-width: 1470px) {
-      .content {
-        .left {
-          h1 {
-            font-size: 200%;
-          }
-        }
-      }
-    }
 
-    @media (max-width: 1300px) {
+      // .content {
+      //   .left {
+      //     h1 {
+      //       font-size: 200%;
+      //     }
+      //   }
+      // }
       .content {
         .left {
           width: 70%;
@@ -92,6 +90,10 @@
         }
       }
     }
+
+    // @media (max-width: 1300px) {
+
+    // }
 
     @media (max-width: 950px) {
       height: fit-content;
