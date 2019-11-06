@@ -27,6 +27,11 @@ const projects = [
     source: calcen,
     description: "CalcEn is a complex number calculator that handles arithmetic of complex expressions, matrices and functions"
   },
+  {
+    name: "CalcEn: Complex Calculator",
+    source: calcen,
+    description: "CalcEn is a complex number calculator that handles arithmetic of complex expressions, matrices and functions"
+  },
 ];
 
 export default class Landing extends Component {
