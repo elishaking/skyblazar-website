@@ -20,7 +20,7 @@ export default function Navbar({ white = false }) {
     <div className="navbar">
       <nav>
         <h1 style={{ color: white && '#fff' }}>
-          <Logo />
+          <Logo white={white} />
           <span>Skyblazar</span>
         </h1>
 
