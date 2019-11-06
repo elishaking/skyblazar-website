@@ -150,8 +150,9 @@
 
         .image {
           position: relative;
-          max-width: 500px;
+          max-width: 630px;
           margin-bottom: 0.5em;
+          margin: 1em;
 
           img {
             width: 100%;
@@ -209,11 +210,11 @@
 
     .contact-form {
       max-width: 500px;
-      padding: 4em;
+      padding: 3em;
       margin: 2em auto;
       border: 1px solid rgba($color: #000, $alpha: .1);
       border-radius: 20px;
-      box-shadow: 0 0 30px rgba($color: #000, $alpha: .1);
+      // box-shadow: 0 0 30px rgba($color: #000, $alpha: .1);
 
       .submit {
         font-family: 'Montserrat', sans-serif;
