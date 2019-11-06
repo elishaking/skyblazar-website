@@ -44,7 +44,15 @@ export default class Landing extends Component {
     showModal: false,
     modalImageSrc: '',
     modalImgCaption: '',
-    modalImgDescription: ''
+    modalImgDescription: '',
+
+    name: '',
+    email: '',
+    phone: '',
+    title: '',
+    description: '',
+
+    errors: {}
   };
 
   /**@param {React.MouseEvent} e */
@@ -63,8 +71,64 @@ export default class Landing extends Component {
     });
   };
 
+  onChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+
+  onSubmit = (e) => {
+    e.preventDefault();
+
+    const { name, email, phone, title, description } = this.state;
+    const formData = {
+      name, email, phone, title, description
+    };
+    const { errors, isValid } = this.validateInput(formData);
+
+    if (!isValid) return this.setState({ errors });
+
+
+  };
+
+  /** @param {{name: string, email: string, phone: string, title: string,  description: string,}} formData */
+  validateInput = (formData) => {
+    const errors = {};
+
+    if (formData.name === '')
+      errors.name = 'Your name is required';
+    else if (formData.name.length < 5 || formData.name.length > 30)
+      errors.name = 'Your name should be between 5-30 characters';
+
+    if (formData.email === '')
+      errors.email = 'Your email is required';
+    else if (!(new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).test(formData.email)))
+      errors.email = 'Please enter a valid email';
+    else if (formData.email.length < 5 || formData.email.length > 30)
+      errors.email = 'Your email should be between 5-30 characters';
+
+    if (formData.phone.length > 30)
+      errors.phone = 'Your phone number should be less than 30 characters';
+    else if (formData.phone !== '' && !(new RegExp(/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/).test(formData.phone)))
+      errors.phone = 'Please enter a valid phone number';
+
+
+    if (formData.title === '')
+      errors.title = 'Your project needs a title';
+    else if (formData.title.length < 5 || formData.title.length > 30)
+      errors.title = 'Your title should be between 5-30 characters';
+
+    if (formData.description.length > 300)
+      errors.description = 'Your description should be less than 300 characters';
+
+    return {
+      isValid: Object.keys(errors).length === 0,
+      errors: errors
+    };
+  };
+
   render() {
-    const { showModal, modalImgCaption, modalImgDescription, modalImageSrc } = this.state;
+    const { showModal, modalImgCaption, modalImgDescription, modalImageSrc, errors } = this.state;
 
     return (
       <div id="landing">
@@ -134,37 +198,43 @@ export default class Landing extends Component {
           </div>
 
           <div className="contact-form">
-            <form method="POST">
+            <form onSubmit={this.onSubmit}>
               <TextInput
                 type="text"
                 name="name"
                 placeholder="* Your name"
-                error="" />
+                onChange={this.onChange}
+                error={errors.name} />
 
               <TextInput
                 type="email"
                 name="email"
                 placeholder="* Your email"
-                error="" />
+                onChange={this.onChange}
+                error={errors.email} />
 
               <TextInput
                 type="tel"
                 name="phone"
                 placeholder="Your phone number"
-                error="" />
+                onChange={this.onChange}
+                error={errors.phone} />
 
               <TextInput
                 type="text"
                 name="title"
                 placeholder="Project Title"
-                error="" />
+                onChange={this.onChange}
+                error={errors.title} />
 
               <TextInput
                 type="text"
-                name="title"
+                name="description"
                 placeholder="Short Project Description"
-                error=""
-                marginBottom="0" />
+                onChange={this.onChange}
+                error={errors.description} />
+
+              <input type="submit" value="Send" className="submit" />
             </form>
           </div>
         </div>

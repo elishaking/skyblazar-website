@@ -1,7 +1,7 @@
 import React from 'react';
 import './Input.scss';
 
-export default function TextInput({ type, name, placeholder, error, marginBottom = '2em' }) {
+export default function TextInput({ type, name, placeholder, onChange, error, marginBottom = '2em' }) {
   return (
     <div className="text-input" style={{
       marginBottom: marginBottom
@@ -9,7 +9,8 @@ export default function TextInput({ type, name, placeholder, error, marginBottom
       <input
         type={type}
         name={name}
-        placeholder={placeholder} />
+        placeholder={placeholder}
+        onChange={onChange} />
 
       {error && (<p><small>{error}</small></p>)}
     </div>

@@ -199,12 +199,29 @@
     }
 
     .contact-form {
-      max-width: 700px;
-      padding: 2em;
+      max-width: 500px;
+      padding: 4em;
       margin: 2em auto;
-      border: 1px solid rgba($color: #B9721F, $alpha: .3);
-      border-radius: 5px;
-      // box-shadow: 0 0 10px rgba($color: #B9721F, $alpha: .1);
+      border: 1px solid rgba($color: #000, $alpha: .1);
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba($color: #000, $alpha: .1);
+
+      .submit {
+        font-family: 'Montserrat', sans-serif;
+        padding: 1em 2em;
+        background-color: #B9721F;
+        color: white;
+        outline: none;
+        border: none;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+      }
+
+      .submit:hover {
+        background-color: #FF8A00;
+      }
     }
   }
 
