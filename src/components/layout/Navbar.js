@@ -5,7 +5,10 @@ import Logo from '../Logo';
 
 export default function Navbar() {
   const scrollPage = (e) => {
+    if (e.target.href.indexOf("#") === -1) return;
+
     e.preventDefault();
+
     const elem = document.getElementById(e.target.href.split("#")[1]);
     window.scrollTo({
       behavior: "smooth",
