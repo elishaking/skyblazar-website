@@ -3,7 +3,7 @@ import './ImageModal.scss';
 
 export default function ImageModal({ imgSrc, imgCaption, imgDescription, close }) {
   return (
-    <div id="image-modal" className="image-modal">
+    <div id="image-modal" className="image-modal" onClick={close}>
       <span className="close" onClick={close} >
         <svg xmlns="http://www.w3.org/2000/svg" width="23.024" height="23.024" viewBox="0 0 23.024 23.024">
           <g id="Group_43" data-name="Group 43" transform="translate(-219.086 -1192.086)">
@@ -13,7 +13,7 @@ export default function ImageModal({ imgSrc, imgCaption, imgDescription, close }
         </svg>
       </span>
 
-      <img className="modal-content" src={imgSrc} alt="Project" />
+      <img onClick={(e) => { e.stopPropagation() }} className="modal-content" src={imgSrc} alt="Project" />
 
       <div className="caption">{imgCaption}</div>
       <div className="caption"><small>{imgDescription}</small></div>
