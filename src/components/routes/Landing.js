@@ -1,3 +1,4 @@
+//@ts-check
 import React, { Component } from 'react';
 import './Landing.scss';
 
@@ -7,9 +8,36 @@ import Navbar from '../layout/Navbar';
 // assets
 import art from '../../assets/images/art.svg';
 import calcen from '../../assets/images/projects/CalcEn.svg'
+import ImageModal from '../ImageModal';
 
 export default class Landing extends Component {
+
+  state = {
+    showModal: false,
+    modalImageSrc: '',
+    modalImgCaption: '',
+    modalImgDescription: ''
+  };
+
+  /**@param {React.MouseEvent} e */
+  closeModal = (e) => {
+    this.setState({ showModal: false });
+  };
+
+  // /** @param {React.MouseEvent} e */
+  openModal = (e) => {
+    const img = e.target.parentElement.getElementsByTagName('img')[0];
+    this.setState({
+      showModal: true,
+      modalImageSrc: img.src,
+      modalImgCaption: img.alt,
+      modalImgDescription: img.dataset.description
+    });
+  };
+
   render() {
+    const { showModal, modalImgCaption, modalImgDescription, modalImageSrc } = this.state;
+
     return (
       <div id="landing">
         <div className="home container">
@@ -47,10 +75,10 @@ export default class Landing extends Component {
             <div className="project">
               <div className="image">
                 <div>
-                  <img src={calcen} alt="CalcEn: Complex Calculator" />
+                  <img src={calcen} alt="CalcEn: Complex Calculator" data-description="CalcEn is a complex number calculator that handles arithmetic of complex expressions, matrices and functions" />
                 </div>
 
-                <div className="hover">
+                <div className="hover" onClick={this.openModal}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="26.49" height="18.443" viewBox="0 0 26.49 18.443">
                     <g id="bx-show-alt" transform="translate(-1.946 -5)">
                       <path id="Path_34" data-name="Path 34" d="M15.587,12.952a2.651,2.651,0,0,1-2.635-2.635,2.583,2.583,0,0,1,.353-1.282C13.187,9.026,13.073,9,12.952,9A3.952,3.952,0,1,0,16.9,12.952c0-.121-.026-.234-.036-.353A2.583,2.583,0,0,1,15.587,12.952Z" transform="translate(2.239 1.269)" fill="#fff" />
@@ -70,6 +98,16 @@ export default class Landing extends Component {
             </div>
           </div>
         </div>
+
+        {
+          showModal && (
+            <ImageModal
+              imgSrc={modalImageSrc}
+              imgCaption={modalImgCaption}
+              imgDescription={modalImgDescription}
+              close={this.closeModal} />
+          )
+        }
       </div>
     )
   }
