@@ -209,6 +209,10 @@
   .contact {
     // background-color: #FFF8EF;
     text-align: center;
+    background-image: url(../../assets/images/contact-bg.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
     h2 {
       color: #B9721F;
@@ -220,6 +224,7 @@
       margin: 2em auto;
       border: 1px solid rgba($color: #000, $alpha: .1);
       border-radius: 20px;
+      background-color: rgba($color: #fff, $alpha: .90);
       // box-shadow: 0 0 30px rgba($color: #000, $alpha: .1);
 
       .submit {
