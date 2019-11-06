@@ -1,5 +1,6 @@
 //@ts-check
 import React, { Component } from 'react';
+import axios from 'axios';
 import See from '../icons/See';
 import './Landing.scss';
 
@@ -90,8 +91,13 @@ export default class Landing extends Component {
     this.setState({ errors });
 
     if (isValid) {
-      console.log(isValid);
       this.setState({ loading: true });
+
+      axios.post("https://express.skyblazar.com/project")
+        .then((res) => {
+          console.log(res.data);
+          this.setState({ loading: false });
+        });
     }
   };
 
