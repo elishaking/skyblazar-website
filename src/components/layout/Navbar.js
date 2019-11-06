@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Navbar.scss';
 import Logo from '../Logo';
 
-export default function Navbar() {
+export default function Navbar({ white = false }) {
   const scrollPage = (e) => {
     if (e.target.href.indexOf("#") === -1) return;
 
@@ -19,7 +19,7 @@ export default function Navbar() {
   return (
     <div className="navbar">
       <nav>
-        <h1>
+        <h1 style={{ color: white && '#fff' }}>
           <Logo />
           <span>Skyblazar</span>
         </h1>
