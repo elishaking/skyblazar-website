@@ -14,6 +14,7 @@ import gracelites from '../../assets/images/projects/Gracelites.svg';
 import quotz from '../../assets/images/projects/Quotz.svg';
 import ImageModal from '../ImageModal';
 import TextInput from '../form/TextInput';
+import Spinner from '../Spinner';
 
 const projects = [
   {
@@ -52,7 +53,8 @@ export default class Landing extends Component {
     title: '',
     description: '',
 
-    errors: {}
+    errors: {},
+    loading: false
   };
 
   /**@param {React.MouseEvent} e */
@@ -85,10 +87,12 @@ export default class Landing extends Component {
       name, email, phone, title, description
     };
     const { errors, isValid } = this.validateInput(formData);
+    this.setState({ errors });
 
-    if (!isValid) return this.setState({ errors });
-
-
+    if (isValid) {
+      console.log(isValid);
+      this.setState({ loading: true });
+    }
   };
 
   /** @param {{name: string, email: string, phone: string, title: string,  description: string,}} formData */
@@ -128,7 +132,7 @@ export default class Landing extends Component {
   };
 
   render() {
-    const { showModal, modalImgCaption, modalImgDescription, modalImageSrc, errors } = this.state;
+    const { showModal, modalImgCaption, modalImgDescription, modalImageSrc, errors, loading } = this.state;
 
     return (
       <div id="landing">
@@ -234,7 +238,9 @@ export default class Landing extends Component {
                 onChange={this.onChange}
                 error={errors.description} />
 
-              <input type="submit" value="Send" className="submit" />
+              {loading ? (<Spinner />) : (
+                <input type="submit" value="Send" className="submit" />
+              )}
             </form>
           </div>
         </div>
