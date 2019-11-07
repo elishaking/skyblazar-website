@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Articles.scss';
-import Markdown from 'markdown-to-jsx';
 import Navbar from '../layout/Navbar';
 import Spinner from '../Spinner';
 
@@ -23,19 +22,21 @@ export default class Article extends Component {
         <div className="main">
           <header className="container">
             <Navbar white={true} />
-            <h1 id="title">{this.articleName}</h1>
+            <h1 id="title">{this.articleName.replace(/-/g, " ")}</h1>
           </header>
 
-          <div className="content">
-            <React.Suspense fallback={(<Spinner />)}>
-              <CurrentArticle title={this.articleName} />
-            </React.Suspense>
+          <div className="container">
+            <div className="content">
+              <div id="article">
+                <React.Suspense fallback={(<Spinner />)}>
+                  <CurrentArticle title={this.articleName} />
+                </React.Suspense>
 
-            {/* <div id="article">
-            <Markdown options={{
+                {/* <Markdown options={{
               forceBlock: true
-            }} children={article.body} />
-            </div> */}
+            }} children={article.body} /> */}
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -1,3 +1,9 @@
 .container {
-  padding: 7rem 10vw;
+  padding: 7em 10vw;
+}
+
+@media (max-width: 760px) {
+  * {
+    font-size: 95%;
+  }
 }
