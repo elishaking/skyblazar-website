@@ -60,12 +60,13 @@ export default class Article extends Component {
           <meta property="og:title" content="5 Reasons why your startup/business needs a professional website"/>
         </Helmet>
 
-        <div className="main container">
-          <Navbar white={true} />
+        <div className="main">
+          <header className="container">
+            <Navbar white={true} />
+            <h1 id="title">{article.title}</h1>
+          </header>
 
           <div className="content">
-            <h1>{article.title}</h1>
-
             <div id="article">
             <Markdown options={{
               forceBlock: true
