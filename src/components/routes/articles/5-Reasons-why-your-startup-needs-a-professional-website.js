@@ -2,6 +2,8 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import '../Articles.scss';
 
+import image from '../../../assets/images/articles/5-reasons-why-you-need-a-website-img.png';
+
 function CurrentArticle({title}) {
   return (
     <React.Fragment>
@@ -20,7 +22,7 @@ function CurrentArticle({title}) {
       <p>The internet has proven over time to be the most lucrative platform for businesses of all categories to thrive. Billionaires like Jeff Bezos and Elon Musk built businesses around the internet and have reaped massive success as a result.</p>
 
 <div class="img">
-        <img src="https://www.skyblazar.com/images/5-reasons-why-you-need-a-website-img.png" alt="5 Reasons why your startup needs a professional website" />
+        <img src={image} alt="5 Reasons why your startup needs a professional website" />
       </div>
 
       <p>No matter how small or big your business may be, a well designed website will guarantee your access to more consumers in need of your unique product or service. Therefore, it is of utmost importance that you have a website that is professional and comprehensive, potraying the most compelling parts of your business. You must not compromise quality or functionality when building one</p>
