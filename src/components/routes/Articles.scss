@@ -5,6 +5,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    box-shadow: 0 0 30px rgba($color: #000000, $alpha: 0.3);
 
     #title {
       color: white;
@@ -72,6 +73,7 @@
             width: 80vw;
             max-width: 500px;
             border-radius: 10px;
+            box-shadow: 0 0 30px rgba($color: #000000, $alpha: 0.3);
           }
         }
 

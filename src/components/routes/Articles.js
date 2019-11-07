@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './Articles.scss';
 import Navbar from '../layout/Navbar';
 
@@ -16,21 +17,26 @@ export default class Articles extends Component {
   render() {
     return (
       <div className="articles">
-        <div className="main container">
-          <Navbar white={true} />
+        <div className="main">
+          <header className="container">
+            <Navbar white={true} />
+            <h1 id="title">Some things we know</h1>
+          </header>
 
-          <div className="content">
-            <h1>Some things we know</h1>
-
-            <div id="articles">
-              {
-                articles.map((article) => (
-                  <div className="article">
-                    <img src={article.source} alt={article.name} />
-                    <p><a href={`/articles/${article.name.replace(/ /g, "-")}`}>{article.name}</a></p>
-                  </div>
-                ))
-              }
+          <div className="container">
+            <div className="content">
+              <div id="articles">
+                {
+                  articles.map((article) => (
+                    <div className="article">
+                      <Link to={`/articles/${article.name.replace(/ /g, "-")}`}>
+                        <img src={article.source} alt={article.name} />
+                        <p>{article.name}</p>
+                      </Link>
+                    </div>
+                  ))
+                }
+              </div>
             </div>
           </div>
         </div>
