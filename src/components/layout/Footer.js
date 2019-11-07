@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import './Footer.scss';
 import Logo from '../Logo';
