@@ -1,11 +1,10 @@
-<svg id="articles-bg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+<svg id="articles-bg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="540" viewBox="0 0 1920 540">
   <defs>
     <linearGradient id="linear-gradient" x1="0.875" y1="-0.096" x2="0.352" y2="0.698" gradientUnits="objectBoundingBox">
       <stop offset="0" stop-color="#ff8a00"/>
       <stop offset="1" stop-color="#ce6f00"/>
     </linearGradient>
   </defs>
-  <rect id="Rectangle_1" data-name="Rectangle 1" width="1920" height="1080" fill="#fff" opacity="0"/>
   <g id="articles-bg-1">
     <rect id="Rectangle_76" data-name="Rectangle 76" width="1920" height="540" fill="url(#linear-gradient)"/>
     <g id="Group_55" data-name="Group 55" transform="translate(443.689 25.001)" opacity="0.2">

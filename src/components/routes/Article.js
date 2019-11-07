@@ -61,12 +61,16 @@ export default class Article extends Component {
         </Helmet>
 
         <div className="main container">
-          <Navbar />
+          <Navbar white={true} />
 
           <div className="content">
+            <h1>{article.title}</h1>
+
+            <div id="article">
             <Markdown options={{
               forceBlock: true
             }} children={article.body} />
+            </div>
           </div>
         </div>
       </div>

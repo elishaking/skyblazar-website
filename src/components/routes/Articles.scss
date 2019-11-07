@@ -4,10 +4,17 @@
     background-image: url(../../assets/images/articles-bg.svg);
     background-repeat: no-repeat;
     background-position: top;
-    background-size: auto;
+    background-size: contain;
 
     .content {
-      padding: 7em 0;
+      padding-top: 7em;
+
+
+      h1 {
+        color: white;
+        font-size: 300%;
+        text-align: center;
+      }
     }
   }
 }
@@ -15,12 +22,6 @@
 .articles {
   .main {
     .content {
-      h1 {
-        color: white;
-        font-size: 300%;
-        text-align: center;
-      }
-
       #articles {
         padding: 7em 0;
         display: flex;
@@ -62,31 +63,38 @@
 }
 
 .article {
-  .content {
-    max-width: 800px;
-    margin: auto;
+  .main {
+    .content {
+      max-width: 800px;
+      margin: auto;
 
-    .img {
-      text-align: center;
-      margin: 3em 0;
+      #article {
+        padding-top: 7em;
 
-      img {
-        max-width: 500px;
-        border-radius: 10px;
+        .img {
+          text-align: center;
+          margin: 3em 0;
+
+          img {
+            width: 80vw;
+            max-width: 500px;
+            border-radius: 10px;
+          }
+        }
+
+        // p {
+        //   text-align: justify;
+        // }
+
+        .summary {
+          margin-top: 1.5em;
+          font-weight: bold;
+        }
+
+        h2 {
+          margin: 1.5em 0 0.5em 0;
+        }
       }
-    }
-
-    p {
-      text-align: justify;
-    }
-
-    .summary {
-      margin-top: 1.5em;
-      font-weight: bold;
-    }
-
-    h2 {
-      margin: 1.5em 0 0.5em 0;
     }
   }
 }
