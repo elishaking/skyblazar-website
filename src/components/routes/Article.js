@@ -22,7 +22,7 @@ export default class Article extends Component {
         <div className="main">
           <header className="container">
             <Navbar white={true} />
-            <h1 id="title">{this.articleName.replace(/-/g, " ")}</h1>
+            <h1 id="title">{this.articleName.replace(/--/g, ": ").replace(/-/g, " ")}</h1>
           </header>
 
           <div className="container">
