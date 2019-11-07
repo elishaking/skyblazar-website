@@ -34,9 +34,9 @@ export default function Navbar({ white = false }) {
         </ul>
 
         <div id="menu-icon">
-          <div></div>
-          <div></div>
-          <div></div>
+          <div style={{ backgroundColor: white && '#fff' }}></div>
+          <div style={{ backgroundColor: white && '#fff' }}></div>
+          <div style={{ backgroundColor: white && '#fff' }}></div>
         </div>
       </nav>
     </div>
