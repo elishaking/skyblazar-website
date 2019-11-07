@@ -4,6 +4,7 @@ import './App.scss';
 import Landing from './components/routes/Landing';
 import Articles from './components/routes/Articles';
 import Article from './components/routes/Article';
+import Footer from './components/layout/Footer';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Route path="/" component={Landing} exact />
       <Route path="/articles" component={Articles} exact />
       <Route path="/articles/:name" component={Article} exact />
+      <Footer />
     </Router>
   );
 }
