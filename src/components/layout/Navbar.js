@@ -5,7 +5,7 @@ import Logo from '../Logo';
 
 export default function Navbar({ white = false }) {
   const scrollPage = (e) => {
-    if (e.target.href.indexOf("#") === -1) return;
+    if (e.target.href.indexOf("#") === -1 || window.location.pathname !== "/") return;
 
     e.preventDefault();
 
@@ -27,9 +27,9 @@ export default function Navbar({ white = false }) {
         <ul>
           <li><a style={{ color: white && '#fff' }} onClick={scrollPage} href="/">Home</a></li>
           {/* <li><a onClick={scrollPage} href="#about">About</a></li> */}
-          <li><a style={{ color: white && '#fff' }} onClick={scrollPage} href="#services">Services</a></li>
-          <li><a style={{ color: white && '#fff' }} onClick={scrollPage} href="#projects">Projects</a></li>
-          <li><a style={{ color: white && '#fff' }} onClick={scrollPage} href="#contact">Contact</a></li>
+          <li><a style={{ color: white && '#fff' }} onClick={scrollPage} href="/#services">Services</a></li>
+          <li><a style={{ color: white && '#fff' }} onClick={scrollPage} href="/#projects">Projects</a></li>
+          <li><a style={{ color: white && '#fff' }} onClick={scrollPage} href="/#contact">Contact</a></li>
           <li><Link style={{ color: white && '#fff' }} to="/articles">Articles</Link></li>
         </ul>
 
