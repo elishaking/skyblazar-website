@@ -1,4 +1,5 @@
-.articles {
+.articles,
+.article {
   .main {
     background-image: url(../../assets/images/articles-bg.svg);
     background-repeat: no-repeat;
@@ -7,7 +8,13 @@
 
     .content {
       padding: 7em 0;
+    }
+  }
+}
 
+.articles {
+  .main {
+    .content {
       h1 {
         color: white;
         font-size: 300%;
@@ -50,6 +57,36 @@
           // }
         }
       }
+    }
+  }
+}
+
+.article {
+  .content {
+    max-width: 800px;
+    margin: auto;
+
+    .img {
+      text-align: center;
+      margin: 3em 0;
+
+      img {
+        max-width: 500px;
+        border-radius: 10px;
+      }
+    }
+
+    p {
+      text-align: justify;
+    }
+
+    .summary {
+      margin-top: 1.5em;
+      font-weight: bold;
+    }
+
+    h2 {
+      margin: 1.5em 0 0.5em 0;
     }
   }
 }
