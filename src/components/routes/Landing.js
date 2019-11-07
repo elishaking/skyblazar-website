@@ -22,6 +22,7 @@ import ImageModal from '../ImageModal';
 import TextInput from '../form/TextInput';
 import Spinner from '../Spinner';
 import GliderContainer from '../GliderContainer';
+import Button from '../Button';
 
 
 const projects = [
@@ -160,7 +161,7 @@ export default class Landing extends Component {
                 We are dedicated to distinguishing your brand by building a unique and compelling digital presence
               </p>
 
-              <a href="#contact">Start a Project</a>
+              <Button link="/#contact" text="Start a Project" />
             </div>
 
             <div className="right">

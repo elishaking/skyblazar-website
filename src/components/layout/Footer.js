@@ -1,6 +1,7 @@
 import React from 'react';
 import './Footer.scss';
 import Logo from '../Logo';
+import Button from '../Button';
 
 export default function Footer() {
   return (
@@ -12,7 +13,8 @@ export default function Footer() {
           <h1><span>SKYBLAZAR</span></h1>
         </div>
 
-        <a href="/#contact">Hire Us</a>
+        {/* <a href="/#contact">Hire Us</a> */}
+        <Button link="/#contact" text="Hire Us" />
       </div>
 
       <div className="copyright">
