@@ -1,6 +1,6 @@
 {
   "editor.formatOnSave": true,
   "jshint.enable": false,
-  "flow.enabled": true,
-  "javascript.validate.enable": false
+  // "flow.enabled": true,
+  // "javascript.validate.enable": false
 }
