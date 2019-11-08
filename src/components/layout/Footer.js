@@ -9,7 +9,7 @@ export default function Footer() {
     <div className="footer container">
       <div className="content">
         <div>
-          <Logo white={true} />
+          <Logo color="#fff" />
           <p>Swift and Affordable Delivery of Elegant Applications</p>
           <h1><span>SKYBLAZAR</span></h1>
         </div>

@@ -25,7 +25,7 @@ export default class Articles extends Component {
       <div className="articles">
         <div className="main">
           <header className="container">
-            <Navbar white={true} />
+            <Navbar color="#fff" />
             <h1 id="title">Some things we know</h1>
           </header>
 

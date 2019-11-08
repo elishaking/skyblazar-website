@@ -21,7 +21,7 @@ export default class Article extends Component {
       <div className="article">
         <div className="main">
           <header className="container">
-            <Navbar white={true} />
+            <Navbar color="#fff" />
             <h1 id="title">{this.articleName.replace(/--/g, ": ").replace(/-/g, " ")}</h1>
           </header>
 
