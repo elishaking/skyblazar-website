@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.scss';
 import Logo from '../Logo';
+import Close from '../icons/Close';
 
 export default function Navbar({ white = false }) {
   const scrollPage = (e) => {
@@ -16,6 +17,14 @@ export default function Navbar({ white = false }) {
     })
   };
 
+  const toggleNavbar = (e) => {
+    const links = document.getElementById("links");
+    const menuIcon = document.getElementById("menu-icon");
+
+    links.style.transform = links.style.transform === "translateX(0px)" ? "translateX(100%)" : "translateX(0)";
+    menuIcon.classList.toggle("open");
+  };
+
   return (
     <div className="navbar">
       <nav>
@@ -24,19 +33,22 @@ export default function Navbar({ white = false }) {
           <span>Skyblazar</span>
         </h1>
 
-        <ul>
+        <ul id="links">
           <li><a style={{ color: white && '#fff' }} onClick={scrollPage} href="/">Home</a></li>
           {/* <li><a onClick={scrollPage} href="#about">About</a></li> */}
           <li><a style={{ color: white && '#fff' }} onClick={scrollPage} href="/#services">Services</a></li>
           <li><a style={{ color: white && '#fff' }} onClick={scrollPage} href="/#projects">Projects</a></li>
           <li><a style={{ color: white && '#fff' }} onClick={scrollPage} href="/#contact">Contact</a></li>
           <li><Link style={{ color: white && '#fff' }} to="/articles">Articles</Link></li>
+          {/* <span className="close" onClick={closeNavbar}>
+            <Close color="#B9721F" />
+          </span> */}
         </ul>
 
-        <div id="menu-icon">
-          <div style={{ backgroundColor: white && '#fff' }}></div>
-          <div style={{ backgroundColor: white && '#fff' }}></div>
-          <div style={{ backgroundColor: white && '#fff' }}></div>
+        <div id="menu-icon" onClick={toggleNavbar}>
+          <div style={{ backgroundColor: white && '#fff' }} className="line1"></div>
+          <div style={{ backgroundColor: white && '#fff' }} className="line2"></div>
+          <div style={{ backgroundColor: white && '#fff' }} className="line3"></div>
         </div>
       </nav>
     </div>
