@@ -2,8 +2,12 @@
   padding: 7em 10vw;
 }
 
+.logo {
+  font-size: 1.3em;
+}
+
 @media (max-width: 760px) {
-  * {
-    font-size: 95%;
+  .logo {
+    font-size: 2em;
   }
 }

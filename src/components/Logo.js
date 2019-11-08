@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Logo({ white = false }) {
   return (
-    <svg style={{ fontSize: "1.3em" }} xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 43.575 43.578">
+    <svg className="logo" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 43.575 43.578">
       <g id="Group_5" data-name="Group 5" transform="translate(-9.497 -7.306)">
         <g id="Group_1" data-name="Group 1" transform="translate(9.497 7.306)">
           <path id="Path_1" data-name="Path 1" d="M31.33,50.884a22.07,22.07,0,0,1-3.594-.3,21.784,21.784,0,1,1,14.1-40.556,1.555,1.555,0,1,1-1.506,2.72,18.683,18.683,0,1,0,7.7,8.085,1.555,1.555,0,1,1,2.788-1.377A21.793,21.793,0,0,1,31.33,50.884Z" transform="translate(-9.497 -7.306)" fill={white ? "#fff" : "#1a1818"} />

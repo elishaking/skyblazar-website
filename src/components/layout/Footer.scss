@@ -21,4 +21,15 @@
     text-align: center;
     padding-top: 3em;
   }
+
+  @media (max-width: 760px) {
+    .content {
+      display: block;
+
+      a {
+        display: block;
+        margin-top: 2em;
+      }
+    }
+  }
 }
