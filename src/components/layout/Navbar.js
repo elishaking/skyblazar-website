@@ -58,6 +58,19 @@ export default class Navbar extends Component {
             {/* <span className="close" onClick={closeNavbar}>
             <Close color="#B9721F" />
           </span> */}
+            <div className="social">
+              <a href="https://facebook.com/skyblazar" target="_blank" rel="noopener noreferrer">
+                <svg id="Group_63" data-name="Group 63" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 61.13 61.13">
+                  <g id="facebook" transform="translate(22.101 14.107)">
+                    <path id="f_1_" d="M48.385,32.916V17.9h5.037l.756-5.853H48.385V8.314c0-1.694.468-2.851,2.9-2.851h3.1V.229A41.988,41.988,0,0,0,49.869,0C45.4,0,42.342,2.728,42.342,7.739v4.311H37.29V17.9h5.053V32.916Z" transform="translate(-37.29 0)" fill="#b9721f" />
+                  </g>
+                  <g id="Ellipse_38" data-name="Ellipse 38" transform="translate(0 0)" fill="none" stroke="#b9721f" stroke-width="3">
+                    <circle cx="30.565" cy="30.565" r="30.565" stroke="none" />
+                    <circle cx="30.565" cy="30.565" r="29.065" fill="none" />
+                  </g>
+                </svg>
+              </a>
+            </div>
           </ul>
 
           <div id="menu-icon" onClick={toggleNavbar}>

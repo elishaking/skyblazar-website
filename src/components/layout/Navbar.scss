@@ -37,6 +37,14 @@
       li:last-child {
         margin-right: 0;
       }
+
+      .social {
+        display: none;
+
+        svg {
+          font-size: 2em;
+        }
+      }
     }
 
     #menu-icon {
@@ -82,7 +90,7 @@
         position: fixed;
         top: 0;
         left: 0;
-        justify-content: space-around;
+        justify-content: space-evenly;
         align-items: center;
         background: #fdecd6;
         z-index: 10;
@@ -91,6 +99,10 @@
 
         li {
           margin: 0;
+        }
+
+        .social {
+          display: block;
         }
 
         // .close {
