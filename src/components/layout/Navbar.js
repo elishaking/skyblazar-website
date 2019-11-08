@@ -29,7 +29,8 @@ export default class Navbar extends Component {
     const links = document.getElementById("links");
     const menuIcon = document.getElementById("menu-icon");
 
-    links.style.transform = this.state.mobileOpen ? "translateX(100%)" : "translateX(0)";
+    // links.style.transform = this.state.mobileOpen ? "translateX(100%)" : "translateX(0)";
+    links.classList.toggle("open-nav");
     menuIcon.classList.toggle("open");
 
     this.setState({ mobileOpen: !this.state.mobileOpen });
