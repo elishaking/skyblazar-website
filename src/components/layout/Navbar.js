@@ -58,7 +58,14 @@ export default class Navbar extends Component {
             {/* <span className="close" onClick={closeNavbar}>
             <Close color="#B9721F" />
           </span> */}
-            <div className="social">
+            <li>
+              <a href="/" className="social">
+                <svg id="facebook-app-symbol" xmlns="http://www.w3.org/2000/svg" width="0.5em" height="1em" viewBox="0 0 12.59 24.245">
+                  <path id="f_1_" d="M45.462,24.245V13.186h3.71l.557-4.311H45.462V6.124c0-1.248.345-2.1,2.136-2.1H49.88V.169A30.927,30.927,0,0,0,46.555,0c-3.291,0-5.544,2.009-5.544,5.7V8.875H37.29v4.311h3.722V24.245Z" transform="translate(-37.29)" fill="#b9721f" />
+                </svg>
+              </a>
+            </li>
+            {/* <div className="social">
               <a href="https://facebook.com/skyblazar">
                 <svg id="Group_63" data-name="Group 63" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 61.13 61.13">
                   <g id="facebook" transform="translate(22.101 14.107)">
@@ -70,7 +77,7 @@ export default class Navbar extends Component {
                   </g>
                 </svg>
               </a>
-            </div>
+            </div> */}
           </ul>
 
           <div id="menu-icon" onClick={toggleNavbar}>
