@@ -10,6 +10,8 @@ import calcen from '../../assets/images/projects/CalcEn.svg';
 import dizt from '../../assets/images/projects/Dizt.svg';
 import gracelites from '../../assets/images/projects/Gracelites.svg';
 import quotz from '../../assets/images/projects/Quotz.svg';
+import blazehub from '../../assets/images/projects/BlazeHub.svg';
+import squaredemy from '../../assets/images/projects/Squaredemy.svg';
 
 import website from '../../assets/images/services/website.svg';
 // import desktop from '../../assets/images/services/desktop.svg';
@@ -27,7 +29,19 @@ import Button from '../Button';
 
 const projects = [
   {
-    name: "CalcEn: Complex Calculator",
+    name: "BlazeHub: Social Networking App",
+    source: blazehub,
+    description: "BlazeHub is a platform for connecting people: A place to chat, follow interesting conversions and be a part of a growing community",
+    link: "https://blazehub.skyblazar.com"
+  },
+  {
+    name: "Squaredemy: The most productive way to learn",
+    source: squaredemy,
+    description: "Squaredemy is an AI-driven learning platform that enhances learning productivity through customized curriculums that are generated based on fun and engaging interactions with the user",
+    link: "https://squaredemy.skyblazar.com"
+  },
+  {
+    name: "CalcEn: Complex Calculator App",
     source: calcen,
     description: "CalcEn is a complex number calculator for android that handles arithmetic of complex expressions, matrices and functions",
     link: "https://calcen.skyblazar.com"
