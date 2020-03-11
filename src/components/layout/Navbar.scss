@@ -9,7 +9,7 @@
     h1 {
       display: flex;
       align-items: center;
-      color: #B9721F;
+      color: #ff9100;
 
       svg {
         margin-right: 0.7em;
@@ -26,13 +26,13 @@
 
         a {
           text-decoration: none;
-          color: #B9721F;
+          color: #ff9100;
           text-transform: uppercase;
           transition: 0.3s ease-in-out;
         }
 
         a:hover {
-          color: #FF8A00;
+          color: #a55800;
         }
       }
 
@@ -44,7 +44,7 @@
         display: flex;
         border-radius: 100px;
         padding: 0.6em 0.9em;
-        background-color: rgba($color: #B9721F, $alpha: 0.3);
+        background-color: rgba($color: #b9721f, $alpha: 0.3);
 
         svg {
           opacity: 0.9;
@@ -53,7 +53,7 @@
       }
 
       .social:hover {
-        background-color: rgba($color: #B9721F, $alpha: 0.5);
+        background-color: rgba($color: #b9721f, $alpha: 0.5);
       }
     }
 
@@ -66,14 +66,13 @@
         width: 20px;
         height: 2px;
         border-radius: 30px;
-        background-color: #B9721F;
+        background-color: #b9721f;
         margin-bottom: 4px;
         transition: 0.3s ease-in-out;
       }
     }
 
     .open {
-
       .line1 {
         transform: rotate(45deg) translateY(3.8px);
       }
