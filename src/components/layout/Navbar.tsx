@@ -7,7 +7,7 @@ import "./Navbar.scss";
 import Logo from "../Logo";
 
 interface NavbarProps {
-  color: string;
+  color?: string;
 }
 
 export default class Navbar extends Component<NavbarProps> {
