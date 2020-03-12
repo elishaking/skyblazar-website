@@ -19,15 +19,9 @@ import Spinner from "../components/Spinner";
 import GliderContainer from "../components/GliderContainer";
 import Button from "../components/Button";
 
-import projects from "../data/projects";
+import { Errors } from "../models/error";
 
-interface Errors {
-  email: string;
-  name: string;
-  phone: string;
-  title: string;
-  description: string;
-}
+import projects from "../data/projects";
 
 export default class Landing extends Component {
   state = {
