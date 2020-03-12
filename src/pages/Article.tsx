@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { RouteComponentProps, match } from "react-router-dom";
 import "./Articles.scss";
 import Navbar from "../components/layout/Navbar";
 import Spinner from "../components/Spinner";
@@ -6,7 +7,13 @@ import Spinner from "../components/Spinner";
 // let CurrentArticle = React.lazy(() => import('./articles/test'));
 let CurrentArticle;
 
-export default class Article extends Component {
+interface ArticleProps extends RouteComponentProps {
+  match: match<{ name: string }>;
+}
+
+export default class Article extends Component<ArticleProps> {
+  articleName = "";
+
   constructor(props) {
     super(props);
 
