@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import "../Articles.scss";
 
-import image from "../../../assets/images/articles/The-most-productive-way-to-learn-img.png";
+import image from "../../assets/images/articles/The-most-productive-way-to-learn-img.png";
 
 export default function Article() {
   return (

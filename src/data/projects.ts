@@ -1,10 +1,10 @@
 // assets
-import calcen from "../../assets/images/projects/CalcEn.svg";
-import dizt from "../../assets/images/projects/Dizt.svg";
-import gracelites from "../../assets/images/projects/Gracelites.svg";
-import quotz from "../../assets/images/projects/Quotz.svg";
-import blazehub from "../../assets/images/projects/BlazeHub.svg";
-import squaredemy from "../../assets/images/projects/Squaredemy.svg";
+import calcen from "../assets/images/projects/CalcEn.svg";
+import dizt from "../assets/images/projects/Dizt.svg";
+import gracelites from "../assets/images/projects/Gracelites.svg";
+import quotz from "../assets/images/projects/Quotz.svg";
+import blazehub from "../assets/images/projects/BlazeHub.svg";
+import squaredemy from "../assets/images/projects/Squaredemy.svg";
 
 export default [
   {

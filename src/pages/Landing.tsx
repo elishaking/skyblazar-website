@@ -5,11 +5,11 @@ import See from "../components/icons/See";
 import "./Landing.scss";
 
 // image assets
-// import art from "../../assets/images/art.svg";
-import website from "../../assets/images/services/website.svg";
-// import desktop from '../../assets/images/services/desktop.svg';
-import mobile from "../../assets/images/services/mobile.svg";
-import ux from "../../assets/images/services/ux.svg";
+// import art from "../assets/images/art.svg";
+import website from "../assets/images/services/website.svg";
+// import desktop from '../assets/images/services/desktop.svg';
+import mobile from "../assets/images/services/mobile.svg";
+import ux from "../assets/images/services/ux.svg";
 
 //components
 import Navbar from "../components/layout/Navbar";
@@ -40,11 +40,11 @@ export default class Landing extends Component {
     loading: false
   };
 
-  closeModal = e => {
+  closeModal = () => {
     this.setState({ showModal: false });
   };
 
-  openModal = e => {
+  openModal = (e: any) => {
     const img = e.target.parentElement.getElementsByTagName("img")[0];
     this.setState({
       showModal: true,
@@ -54,13 +54,13 @@ export default class Landing extends Component {
     });
   };
 
-  onChange = e => {
+  onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     this.setState({
       [e.target.name]: e.target.value
     });
   };
 
-  onSubmit = e => {
+  onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const { name, email, phone, title, description } = this.state;

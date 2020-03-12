@@ -1,5 +1,5 @@
-import img1 from "../../assets/images/articles/5-reasons-why-you-need-a-website-img.png";
-import img2 from "../../assets/images/articles/The-most-productive-way-to-learn-img.png";
+import img1 from "../assets/images/articles/5-reasons-why-you-need-a-website-img.png";
+import img2 from "../assets/images/articles/The-most-productive-way-to-learn-img.png";
 
 export default [
   {

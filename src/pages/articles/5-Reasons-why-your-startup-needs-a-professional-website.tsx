@@ -2,9 +2,13 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import "../Articles.scss";
 
-import image from "../../../assets/images/articles/5-reasons-why-you-need-a-website-img.png";
+import image from "../../assets/images/articles/5-reasons-why-you-need-a-website-img.png";
 
-function CurrentArticle({ title }) {
+interface CurrentArticleProps {
+  title: string;
+}
+
+function CurrentArticle({ title }: CurrentArticleProps) {
   return (
     <React.Fragment>
       <Helmet>
