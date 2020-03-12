@@ -1,19 +1,20 @@
-import React, { Component } from 'react';
-import './Articles.scss';
-import Navbar from '../layout/Navbar';
-import Spinner from '../Spinner';
+import React, { Component } from "react";
+import "./Articles.scss";
+import Navbar from "../components/layout/Navbar";
+import Spinner from "../components/Spinner";
 
 // let CurrentArticle = React.lazy(() => import('./articles/test'));
 let CurrentArticle;
 
 export default class Article extends Component {
-
   constructor(props) {
     super(props);
 
     this.articleName = this.props.match.params.name;
 
-    CurrentArticle = React.lazy(() => import(`./articles/${this.articleName.trim()}`));
+    CurrentArticle = React.lazy(() =>
+      import(`./articles/${this.articleName.trim()}`)
+    );
   }
 
   render() {
@@ -22,13 +23,15 @@ export default class Article extends Component {
         <div className="main">
           <header className="container">
             <Navbar color="#fff" />
-            <h1 id="title">{this.articleName.replace(/--/g, ": ").replace(/-/g, " ")}</h1>
+            <h1 id="title">
+              {this.articleName.replace(/--/g, ": ").replace(/-/g, " ")}
+            </h1>
           </header>
 
           <div className="container">
             <div className="content">
               <div id="article">
-                <React.Suspense fallback={(<Spinner />)}>
+                <React.Suspense fallback={<Spinner />}>
                   <CurrentArticle title={this.articleName} />
                 </React.Suspense>
 
@@ -40,6 +43,6 @@ export default class Article extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }

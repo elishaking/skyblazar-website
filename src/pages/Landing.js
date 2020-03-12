@@ -1,7 +1,7 @@
 //@ts-check
 import React, { Component } from "react";
 import axios from "axios";
-import See from "../icons/See";
+import See from "../components/icons/See";
 import "./Landing.scss";
 
 // assets
@@ -19,12 +19,12 @@ import mobile from "../../assets/images/services/mobile.svg";
 import ux from "../../assets/images/services/ux.svg";
 
 //components
-import Navbar from "../layout/Navbar";
-import ImageModal from "../ImageModal";
-import TextInput from "../form/TextInput";
-import Spinner from "../Spinner";
-import GliderContainer from "../GliderContainer";
-import Button from "../Button";
+import Navbar from "../components/layout/Navbar";
+import ImageModal from "../components/ImageModal";
+import TextInput from "../components/form/TextInput";
+import Spinner from "../components/Spinner";
+import GliderContainer from "../components/GliderContainer";
+import Button from "../components/Button";
 
 const projects = [
   {

@@ -1,10 +1,10 @@
-import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import './App.scss';
-import Landing from './components/routes/Landing';
-import Articles from './components/routes/Articles';
-import Article from './components/routes/Article';
-import Footer from './components/layout/Footer';
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import "./App.scss";
+import Landing from "./pages/Landing";
+import Articles from "./pages/Articles";
+import Article from "./pages/Article";
+import Footer from "./components/layout/Footer";
 
 function App() {
   return (
