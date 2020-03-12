@@ -71,6 +71,14 @@ const projects = [
   }
 ];
 
+interface Errors {
+  email: string;
+  name: string;
+  phone: string;
+  title: string;
+  description: string;
+}
+
 export default class Landing extends Component {
   state = {
     showModal: false,
@@ -84,7 +92,7 @@ export default class Landing extends Component {
     title: "",
     description: "",
 
-    errors: {},
+    errors: {} as Errors,
     loading: false
   };
 
@@ -134,7 +142,7 @@ export default class Landing extends Component {
 
   /** @param {{name: string, email: string, phone: string, title: string,  description: string,}} formData */
   validateInput = formData => {
-    const errors = {};
+    const errors = {} as Errors;
 
     if (formData.name === "") errors.name = "Your name is required";
     else if (formData.name.length < 5 || formData.name.length > 30)
