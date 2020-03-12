@@ -44,8 +44,9 @@ export default class Landing extends Component {
     this.setState({ showModal: false });
   };
 
-  openModal = (e: any) => {
-    const img = e.target.parentElement.getElementsByTagName("img")[0];
+  openModal = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    const img = ((e.target as HTMLElement)
+      .parentElement as HTMLElement).getElementsByTagName("img")[0];
     this.setState({
       showModal: true,
       modalImageSrc: img.src,
