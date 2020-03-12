@@ -5,7 +5,7 @@ import Navbar from "../components/layout/Navbar";
 import Spinner from "../components/Spinner";
 
 // let CurrentArticle = React.lazy(() => import('./articles/test'));
-let CurrentArticle;
+let CurrentArticle: React.LazyExoticComponent<React.ComponentType<any>>;
 
 interface ArticleProps extends RouteComponentProps {
   match: match<{ name: string }>;
@@ -14,7 +14,7 @@ interface ArticleProps extends RouteComponentProps {
 export default class Article extends Component<ArticleProps> {
   articleName = "";
 
-  constructor(props) {
+  constructor(props: ArticleProps) {
     super(props);
 
     this.articleName = this.props.match.params.name;
