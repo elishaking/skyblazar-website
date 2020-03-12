@@ -15,7 +15,7 @@ export default class Navbar extends Component<NavbarProps> {
     mobileOpen: false
   };
 
-  scrollPage = e => {
+  scrollPage = (e: any) => {
     if (e.target.href.indexOf("#") === -1 || window.location.pathname !== "/")
       return;
 
@@ -25,7 +25,9 @@ export default class Navbar extends Component<NavbarProps> {
       this.toggleNavbar();
     }
 
-    const elem = document.getElementById(e.target.href.split("#")[1]);
+    const elem = document.getElementById(
+      e.target.href.split("#")[1]
+    ) as HTMLElement;
     window.scrollTo({
       behavior: "smooth",
       top: elem.offsetTop
@@ -33,8 +35,8 @@ export default class Navbar extends Component<NavbarProps> {
   };
 
   toggleNavbar = () => {
-    const links = document.getElementById("links");
-    const menuIcon = document.getElementById("menu-icon");
+    const links = document.getElementById("links") as HTMLElement;
+    const menuIcon = document.getElementById("menu-icon") as HTMLElement;
 
     // links.style.transform = this.state.mobileOpen ? "translateX(100%)" : "translateX(0)";
     links.classList.toggle("open-nav");
