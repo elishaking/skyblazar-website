@@ -22,6 +22,7 @@ import Button from "../components/Button";
 import { Errors } from "../models/error";
 import projects from "../data/projects";
 import { validateInput } from "../utils/validation";
+import { threadId } from "worker_threads";
 
 export default class Landing extends Component {
   state = {
@@ -30,11 +31,16 @@ export default class Landing extends Component {
     modalImgCaption: "",
     modalImgDescription: "",
 
-    name: "",
-    email: "",
-    phone: "",
-    title: "",
-    description: "",
+    // name: "",
+    // email: "",
+    // phone: "",
+    // title: "",
+    // description: "",
+    description: "Project Description",
+    email: "ek.chibueze@gmail.com",
+    name: "King E",
+    phone: "+2348119340144",
+    title: "New Project",
 
     errors: {} as Errors,
     loading: false
@@ -78,10 +84,16 @@ export default class Landing extends Component {
     if (isValid) {
       this.setState({ loading: true });
 
-      axios.post("https://skyblazar.com/project").then(res => {
-        console.log(res.data);
-        this.setState({ loading: false });
-      });
+      axios
+        .post("https://skyblazar-server.herokuapp.com/project", formData)
+        .then(res => {
+          // console.log(res.data);
+          this.setState({ loading: false });
+        })
+        .catch(err => {
+          // console.log(err);
+          this.setState({ loading: false });
+        });
     }
   };
 
