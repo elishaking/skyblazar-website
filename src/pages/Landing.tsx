@@ -78,7 +78,7 @@ export default class Landing extends Component {
     if (isValid) {
       this.setState({ loading: true });
 
-      axios.post("https://express.skyblazar.com/project").then(res => {
+      axios.post("https://skyblazar.com/project").then(res => {
         console.log(res.data);
         this.setState({ loading: false });
       });
