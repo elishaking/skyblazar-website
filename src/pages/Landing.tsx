@@ -1,75 +1,27 @@
 //@ts-check
 import React, { Component } from "react";
 import axios from "axios";
-import See from "../icons/See";
+import See from "../components/icons/See";
 import "./Landing.scss";
 
-// assets
-import art from "../../assets/images/art.svg";
-import calcen from "../../assets/images/projects/CalcEn.svg";
-import dizt from "../../assets/images/projects/Dizt.svg";
-import gracelites from "../../assets/images/projects/Gracelites.svg";
-import quotz from "../../assets/images/projects/Quotz.svg";
-import blazehub from "../../assets/images/projects/BlazeHub.svg";
-import squaredemy from "../../assets/images/projects/Squaredemy.svg";
-
-import website from "../../assets/images/services/website.svg";
-// import desktop from '../../assets/images/services/desktop.svg';
-import mobile from "../../assets/images/services/mobile.svg";
-import ux from "../../assets/images/services/ux.svg";
+// image assets
+// import art from "../assets/images/art.svg";
+import website from "../assets/images/services/website.svg";
+// import desktop from '../assets/images/services/desktop.svg';
+import mobile from "../assets/images/services/mobile.svg";
+import ux from "../assets/images/services/ux.svg";
 
 //components
-import Navbar from "../layout/Navbar";
-import ImageModal from "../ImageModal";
-import TextInput from "../form/TextInput";
-import Spinner from "../Spinner";
-import GliderContainer from "../GliderContainer";
-import Button from "../Button";
+import Navbar from "../components/layout/Navbar";
+import ImageModal from "../components/ImageModal";
+import TextInput from "../components/form/TextInput";
+import Spinner from "../components/Spinner";
+import GliderContainer from "../components/GliderContainer";
+import Button from "../components/Button";
 
-const projects = [
-  {
-    name: "BlazeHub: Social Networking App",
-    source: blazehub,
-    description:
-      "BlazeHub is a platform for connecting people: A place to chat, follow interesting conversions and be a part of a growing community",
-    link: "https://blazehub.skyblazar.com"
-  },
-  {
-    name: "Squaredemy: The most productive way to learn",
-    source: squaredemy,
-    description:
-      "Squaredemy is an AI-driven learning platform that enhances learning productivity through customized curriculums that are generated based on fun and engaging interactions with the user",
-    link: "https://squaredemy.skyblazar.com"
-  },
-  {
-    name: "CalcEn: Complex Calculator App",
-    source: calcen,
-    description:
-      "CalcEn is a complex number calculator for android that handles arithmetic of complex expressions, matrices and functions",
-    link: "https://calcen.skyblazar.com"
-  },
-  {
-    name: "Gracelites International School",
-    source: gracelites,
-    description:
-      "Gracelites is an outstanding Nursery/Primary committed to laying the crucial foundations that will set your child on the right path to all-round excellence spiritually, intellectually and physically",
-    link: "https://gracelites.skyblazar.com"
-  },
-  {
-    name: "Dizt: Navigation App",
-    source: dizt,
-    description:
-      "Dizt is a simple and intuitive mobile app that enables you to determine the road distance between two locations and the exact travel time using your car, the bus, your bicycle or by walking. You also get to see the transport fare if you are using a bus along some routes",
-    link: "https://dizt.skyblazar.com"
-  },
-  {
-    name: "Quotz: Quotes App",
-    source: quotz,
-    description:
-      "Quotz is an elegant mobile app that displays several mindfully selected quotes in a simple and elegant interface that can be used as a screensaver. It contains words of wisdom from several great men and woman who have had a great impact on the world",
-    link: "https://quotz.skyblazar.com"
-  }
-];
+import { Errors } from "../models/error";
+import projects from "../data/projects";
+import { validateInput } from "../utils/validation";
 
 export default class Landing extends Component {
   state = {
@@ -84,16 +36,17 @@ export default class Landing extends Component {
     title: "",
     description: "",
 
-    errors: {},
+    errors: {} as Errors,
     loading: false
   };
 
-  closeModal = e => {
+  closeModal = () => {
     this.setState({ showModal: false });
   };
 
-  openModal = e => {
-    const img = e.target.parentElement.getElementsByTagName("img")[0];
+  openModal = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    const img = ((e.target as HTMLElement)
+      .parentElement as HTMLElement).getElementsByTagName("img")[0];
     this.setState({
       showModal: true,
       modalImageSrc: img.src,
@@ -102,13 +55,13 @@ export default class Landing extends Component {
     });
   };
 
-  onChange = e => {
+  onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     this.setState({
       [e.target.name]: e.target.value
     });
   };
 
-  onSubmit = e => {
+  onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const { name, email, phone, title, description } = this.state;
@@ -119,7 +72,7 @@ export default class Landing extends Component {
       title,
       description
     };
-    const { errors, isValid } = this.validateInput(formData);
+    const { errors, isValid } = validateInput(formData);
     this.setState({ errors });
 
     if (isValid) {
@@ -130,48 +83,6 @@ export default class Landing extends Component {
         this.setState({ loading: false });
       });
     }
-  };
-
-  /** @param {{name: string, email: string, phone: string, title: string,  description: string,}} formData */
-  validateInput = formData => {
-    const errors = {};
-
-    if (formData.name === "") errors.name = "Your name is required";
-    else if (formData.name.length < 5 || formData.name.length > 30)
-      errors.name = "Your name should be between 5-30 characters";
-
-    if (formData.email === "") errors.email = "Your email is required";
-    else if (
-      !new RegExp(
-        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      ).test(formData.email)
-    )
-      errors.email = "Please enter a valid email";
-    else if (formData.email.length < 5 || formData.email.length > 30)
-      errors.email = "Your email should be between 5-30 characters";
-
-    if (formData.phone.length > 30)
-      errors.phone = "Your phone number should be less than 30 characters";
-    else if (
-      formData.phone !== "" &&
-      !new RegExp(/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/).test(
-        formData.phone
-      )
-    )
-      errors.phone = "Please enter a valid phone number";
-
-    if (formData.title === "") errors.title = "Your project needs a title";
-    else if (formData.title.length < 5 || formData.title.length > 30)
-      errors.title = "Your title should be between 5-30 characters";
-
-    if (formData.description.length > 300)
-      errors.description =
-        "Your description should be less than 300 characters";
-
-    return {
-      isValid: Object.keys(errors).length === 0,
-      errors: errors
-    };
   };
 
   render() {

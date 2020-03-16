@@ -7,8 +7,8 @@
   .home {
     height: 100vh;
     // background-color: #fff8ef;
-    background-color: rgba(0, 0, 0, 0.9);
-    background-image: url(../../assets/images/bg.svg);
+    background-color: rgba(0, 0, 0, 0.87);
+    background-image: url(../assets/images/bg.svg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -28,7 +28,7 @@
       }
 
       .left {
-        width: 70%;
+        width: 60%;
 
         h1,
         p {
@@ -67,13 +67,13 @@
       //   }
       // }
       .content {
-        // .left {
-        //   width: 70%;
+        .left {
+          width: 70%;
 
-        //   h1 {
-        //     font-size: 300%;
-        //   }
-        // }
+          // h1 {
+          //   font-size: 300%;
+          // }
+        }
 
         .right {
           width: 70%;
@@ -93,7 +93,7 @@
         margin-top: 5em;
 
         .left {
-          // width: 80%;
+          width: 80%;
           margin-bottom: 3em;
         }
 
@@ -217,7 +217,7 @@
   .contact {
     // background-color: #FFF8EF;
     text-align: center;
-    background-image: url(../../assets/images/contact-bg.svg);
+    background-image: url(../assets/images/contact-bg.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
