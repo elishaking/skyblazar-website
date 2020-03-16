@@ -33,7 +33,8 @@ export default [
     source: gracelites,
     description:
       "Gracelites is an outstanding Nursery/Primary committed to laying the crucial foundations that will set your child on the right path to all-round excellence spiritually, intellectually and physically",
-    link: "https://gracelites.skyblazar.com"
+    // link: "https://gracelites.skyblazar.com"
+    link: "https://gracelites.herokuapp.com/"
   },
   {
     name: "Dizt: Navigation App",
