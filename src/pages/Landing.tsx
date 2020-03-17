@@ -43,7 +43,8 @@ export default class Landing extends Component {
     title: "New Project",
 
     errors: {} as Errors,
-    loading: false
+    loading: false,
+    contactSent: false
   };
 
   closeModal = () => {
@@ -88,7 +89,21 @@ export default class Landing extends Component {
         .post("https://skyblazar-server.herokuapp.com/project", formData)
         .then(res => {
           // console.log(res.data);
-          this.setState({ loading: false });
+          this.setState({
+            loading: false,
+            name: "",
+            email: "",
+            phone: "",
+            title: "",
+            description: "",
+            contactSent: true
+          });
+
+          setTimeout(() => {
+            this.setState({
+              contactSent: false
+            });
+          }, 3000);
         })
         .catch(err => {
           // console.log(err);
@@ -104,7 +119,15 @@ export default class Landing extends Component {
       modalImgDescription,
       modalImageSrc,
       errors,
-      loading
+      loading,
+
+      name,
+      email,
+      title,
+      description,
+      phone,
+
+      contactSent
     } = this.state;
 
     return (
@@ -217,6 +240,7 @@ export default class Landing extends Component {
                 name="name"
                 placeholder="* Your name"
                 onChange={this.onChange}
+                value={name}
                 error={errors.name}
               />
 
@@ -225,6 +249,7 @@ export default class Landing extends Component {
                 name="email"
                 placeholder="* Your email"
                 onChange={this.onChange}
+                value={email}
                 error={errors.email}
               />
 
@@ -233,6 +258,7 @@ export default class Landing extends Component {
                 name="phone"
                 placeholder="Your phone number"
                 onChange={this.onChange}
+                value={phone}
                 error={errors.phone}
               />
 
@@ -241,6 +267,7 @@ export default class Landing extends Component {
                 name="title"
                 placeholder="Project Title"
                 onChange={this.onChange}
+                value={title}
                 error={errors.title}
               />
 
@@ -249,11 +276,16 @@ export default class Landing extends Component {
                 name="description"
                 placeholder="Short Project Description"
                 onChange={this.onChange}
+                value={description}
                 error={errors.description}
               />
 
               {loading ? (
                 <Spinner />
+              ) : contactSent ? (
+                <p className="message-received">
+                  Your message has been received, we'll get back to you shortly
+                </p>
               ) : (
                 <input type="submit" value="Send" className="submit" />
               )}

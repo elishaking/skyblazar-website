@@ -7,6 +7,7 @@ interface TextInputProps {
   placeholder: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   error: string;
+  value?: string;
   marginBottom?: string;
 }
 
@@ -16,6 +17,7 @@ export default function TextInput({
   placeholder,
   onChange,
   error,
+  value,
   marginBottom = "2em"
 }: TextInputProps) {
   return (
@@ -31,6 +33,7 @@ export default function TextInput({
         name={name}
         placeholder={placeholder}
         onChange={onChange}
+        value={value}
       />
 
       {error && (
