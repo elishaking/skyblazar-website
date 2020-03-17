@@ -22,7 +22,12 @@ import Button from "../components/Button";
 import { Errors } from "../models/error";
 import projects from "../data/projects";
 import { validateInput } from "../utils/validation";
-import { threadId } from "worker_threads";
+import Close from "../components/icons/Close";
+
+const contantResult = {
+  MESSAGE_SENT: "Your message has been received, we'll get back to you shortly",
+  ERROR: "Something went wrong, please try again later"
+};
 
 export default class Landing extends Component {
   state = {
@@ -31,20 +36,23 @@ export default class Landing extends Component {
     modalImgCaption: "",
     modalImgDescription: "",
 
-    // name: "",
-    // email: "",
-    // phone: "",
-    // title: "",
-    // description: "",
-    description: "Project Description",
-    email: "ek.chibueze@gmail.com",
-    name: "King E",
-    phone: "+2348119340144",
-    title: "New Project",
+    name: "",
+    email: "",
+    phone: "",
+    title: "",
+    description: "",
+    // description: "Project Description",
+    // email: "ek.chibueze@gmail.com",
+    // name: "King E",
+    // phone: "+2348119340144",
+    // title: "New Project",
 
     errors: {} as Errors,
     loading: false,
-    contactSent: false
+
+    contactResponseReceived: false,
+    contactResponseMessage: "",
+    contactError: false
   };
 
   closeModal = () => {
@@ -89,27 +97,44 @@ export default class Landing extends Component {
         .post("https://skyblazar-server.herokuapp.com/project", formData)
         .then(res => {
           // console.log(res.data);
-          this.setState({
-            loading: false,
-            name: "",
-            email: "",
-            phone: "",
-            title: "",
-            description: "",
-            contactSent: true
-          });
 
-          setTimeout(() => {
+          if (res.data.success === true) {
             this.setState({
-              contactSent: false
+              loading: false,
+              name: "",
+              email: "",
+              phone: "",
+              title: "",
+              description: "",
+              contactResponseReceived: true,
+              contactResponseMessage: contantResult.MESSAGE_SENT,
+              contactError: false
             });
-          }, 3000);
+          } else {
+            this.setState({
+              loading: false,
+              contactResponseReceived: true,
+              contactResponseMessage: contantResult.ERROR,
+              contactError: true
+            });
+          }
         })
         .catch(err => {
           // console.log(err);
-          this.setState({ loading: false });
+          this.setState({
+            loading: false,
+            contactResponseReceived: true,
+            contactResponseMessage: contantResult.ERROR,
+            contactError: true
+          });
         });
     }
+  };
+
+  closeContactMessage = () => {
+    this.setState({
+      contactResponseReceived: false
+    });
   };
 
   render() {
@@ -127,7 +152,9 @@ export default class Landing extends Component {
       description,
       phone,
 
-      contactSent
+      contactResponseReceived,
+      contactResponseMessage,
+      contactError
     } = this.state;
 
     return (
@@ -282,9 +309,16 @@ export default class Landing extends Component {
 
               {loading ? (
                 <Spinner />
-              ) : contactSent ? (
-                <p className="message-received">
-                  Your message has been received, we'll get back to you shortly
+              ) : contactResponseReceived ? (
+                <p
+                  className="message-received"
+                  onClick={this.closeContactMessage}
+                  style={{
+                    backgroundColor: contactError ? "#e35c5c" : "#4b9b4b"
+                  }}
+                >
+                  <span>{contactResponseMessage}</span>
+                  <Close onClick={this.closeContactMessage} />
                 </p>
               ) : (
                 <input type="submit" value="Send" className="submit" />

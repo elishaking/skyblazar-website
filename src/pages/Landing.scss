@@ -251,6 +251,28 @@
       .submit:hover {
         background-color: #ff8a00;
       }
+
+      .message-received {
+        padding: 1em 2em;
+        // background-color: #ff8a00;
+        // background-color: #4b9b4b;
+        // font-weight: bold;
+        color: white;
+        border-radius: 20px;
+        display: flex;
+        cursor: pointer;
+
+        svg {
+          font-size: 2em;
+          margin-left: 1em;
+          cursor: pointer;
+          transition: 0.3s ease-in-out;
+        }
+
+        svg:hover {
+          transform: scale(1.2);
+        }
+      }
     }
   }
 

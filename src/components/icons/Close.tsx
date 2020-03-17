@@ -2,15 +2,17 @@ import React from "react";
 
 interface CloseProps {
   color?: string;
+  onClick?: (event: React.MouseEvent<SVGSVGElement, MouseEvent>) => void;
 }
 
-export default function Close({ color = "#fff" }: CloseProps) {
+export default function Close({ color = "#fff", onClick }: CloseProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="1em"
       height="1em"
       viewBox="0 0 23.024 23.024"
+      onClick={onClick}
     >
       <g
         id="Group_43"
