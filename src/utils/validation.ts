@@ -19,7 +19,7 @@ export const validateInput = (formData: ContactFormData) => {
   if (formData.email === "") errors.email = "Your email is required";
   else if (
     !new RegExp(
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      /^(([^<>()\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     ).test(formData.email)
   )
     errors.email = "Please enter a valid email";
@@ -30,7 +30,7 @@ export const validateInput = (formData: ContactFormData) => {
     errors.phone = "Your phone number should be less than 30 characters";
   else if (
     formData.phone !== "" &&
-    !new RegExp(/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/).test(
+    !new RegExp(/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s./0-9]*$/).test(
       formData.phone
     )
   )
@@ -45,6 +45,6 @@ export const validateInput = (formData: ContactFormData) => {
 
   return {
     isValid: Object.keys(errors).length === 0,
-    errors: errors
+    errors: errors,
   };
 };
